@@ -57,7 +57,7 @@ def sample_data() -> List[Record]:
 def main():
     print("Vaccination Center Records")
     records: List[Record] = []
-    # start with sample data to make it easy to test; comment out next line if you want empty start
+   
     records.extend(sample_data())
 
     while True:
