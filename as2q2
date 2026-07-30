@@ -1,16 +1,3 @@
-vaccination_center.py
-
-Interactive program to track vaccinated individuals and:
- - count fully vaccinated individuals
- - display senior citizens (age >= 60)
- - calculate percentage of fully vaccinated people
- - find the most used vaccine
- - display records sorted by age
-
-Assumptions:
- - By default, vaccines require 2 doses to be 'fully vaccinated'.
- - Single-dose vaccines are recognized by name (J&J, Janssen, Johnson&Johnson).
-"""
 
 from dataclasses import dataclass, asdict
 from collections import Counter
@@ -70,7 +57,7 @@ def sample_data() -> List[Record]:
 def main():
     print("Vaccination Center Records")
     records: List[Record] = []
-    # start with sample data to make it easy to test; comment out next line if you want empty start
+   
     records.extend(sample_data())
 
     while True:
@@ -126,4 +113,4 @@ def main():
         elif choice == "6":
             top = most_used_vaccine(records)
             if not top:
-                print("No vaccine data.")*
+                print("No vaccine data.")
