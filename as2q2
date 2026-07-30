@@ -57,7 +57,7 @@ def sample_data() -> List[Record]:
 def main():
     print("Vaccination Center Records")
     records: List[Record] = []
-   
+    # start with sample data to make it easy to test; comment out next line if you want empty start
     records.extend(sample_data())
 
     while True:
@@ -114,3 +114,26 @@ def main():
             top = most_used_vaccine(records)
             if not top:
                 print("No vaccine data.")
+            else:
+                print("Most used vaccine(s): " + ", ".join(top))
+
+        elif choice == "7":
+            for r in records_sorted_by_age(records, descending=False):
+                print_record(r)
+
+        elif choice == "8":
+            for r in records_sorted_by_age(records, descending=True):
+                print_record(r)
+
+        elif choice == "9":
+            records.clear()
+            print("All records cleared.")
+
+        elif choice == "0":
+            print("Goodbye.")
+            break
+        else:
+            print("Unknown option, please try again.")
+
+if __name__ == "__main__":
+    main()
